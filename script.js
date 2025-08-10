@@ -1,41 +1,40 @@
 // Definición de variables
-let usuarioRegistrado = "abc";
-let claveRegistrada = "123";
+let usuarioRegistrado = "a";
+let claveRegistrada = "1";
 let nombreUsuario = "";
 let nickname = "";
 let edad = 0;
 let telefonoEstudiante = 0;
 let carrera = "Técnico en Desarrollo de Software";
 
-// Función para simular el prompt en un entorno de consola
 
-
-// Inicio de sesión y registro
-console.log("=================================");
-console.log("          Focus App");
-console.log("=================================");
-console.log("Seleccione una opción:");
-console.log("1. Iniciar sesión");
-console.log("2. Registrarse");
-let opcionInicio = parseInt(prompt("--------Ingrese una opción:--------\n\n1. Iniciar sesión\n2. Registrarse"));
-
-// Si selecciona registrarse debe ingresar los datos que le piden
-if (opcionInicio === 2) {
+function registrarUsuario() {
     usuarioRegistrado = prompt("Ingrese un nombre de usuario: ");
     claveRegistrada = prompt("Ingrese una contraseña: ");
     edad = parseInt(prompt("Ingrese su edad: "));
     nickname = prompt("Ingrese su nickname: ");
     telefonoEstudiante = parseInt(prompt("Ingrese su teléfono: "));
-    console.log("\n¡¡Te registraste correctamente!! :D\nAhora puedes iniciar sesión.");
-    nombreUsuario = prompt("\n¡¡Te registraste correctamente!! :D\nAhora puedes iniciar sesión.\n\nIngrese su usuario: ")
-}else{
-    if(opcionInicio === 1){
-        nombreUsuario = prompt("Ingrese su usuario: ")
-    }
+    alert("¡¡Te registraste correctamente!! :D\nAhora puedes iniciar sesión.");
 }
 
-;
-let claveLogin = prompt("Ingrese su contraseña: ");
+function iniciarSesion() {
+    nombreUsuario = prompt("Ingrese su usuario: ");
+    claveLogin = prompt("Ingrese su contraseña: ");
+}
+
+
+// Inicio de sesión y registro
+alert("=================================\n                 Focus App              \n================================")
+let opcionInicio = parseInt(prompt("=================================\n                 Focus App              \n================================\n\n--------Ingrese una opción:--------\n\n1. Iniciar sesión\n2. Registrarse"));
+
+// Si selecciona registrarse debe ingresar los datos que le piden
+if (opcionInicio === 2) {
+    registrarUsuario();
+    iniciarSesion();
+} else if (opcionInicio === 1) {
+    iniciarSesion();
+}
+
 
 // Verificación de inicio de sesión
 if (nombreUsuario === usuarioRegistrado && claveLogin === claveRegistrada) {
@@ -55,6 +54,8 @@ if (nombreUsuario === usuarioRegistrado && claveLogin === claveRegistrada) {
     // Desglose de las opciones de Resumen
     switch (opcionResumen) {
         case 1:
+
+            alert("=================================\n                 Focus App              \n================================\n\n=================================\n                 RESUMEN              \n================================")
             console.log("\nIntroducción a la programación");
             console.log("Profesor: Jossy Reinaldo Tello Landazuri");
             console.log("Progreso: 40%");
