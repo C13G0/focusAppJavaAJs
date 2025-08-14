@@ -2,10 +2,13 @@
 let usuarioRegistrado = "a";
 let claveRegistrada = "1";
 let nombreUsuario = "";
-let nickname = "";
-let edad = 0;
-let telefonoEstudiante = 0;
+let nickname = "Blindprogrammer";
+let edad = 22;
+let telefonoEstudiante = 3123784290;
 let carrera = "Técnico en Desarrollo de Software";
+
+//Funciones para registrar usuario e iniciar sesión
+
 
 
 function registrarUsuario() {
@@ -113,7 +116,7 @@ if (nombreUsuario === usuarioRegistrado && claveLogin === claveRegistrada) {
             console.log("\n1. Perfil");
             console.log("2. Datos");
             console.log("3. Otros");
-            let opcionConfiguracion = parseInt(prompt("Opción: "));
+            let opcionConfiguracion = parseInt(prompt("Opción:\n\n1. Perfil\n2. Datos\n3. Otros"))
 
             if (opcionConfiguracion === 1) {
                 console.log("\nPerfil:");
@@ -141,4 +144,4 @@ if (nombreUsuario === usuarioRegistrado && claveLogin === claveRegistrada) {
     console.log("\nUsuario o contraseña incorrectos. Por favor reinicia el proceso.");
 }
 
-console.log("\nGracias por usar Focus App. ¡Hasta pronto!");
+console.log("\nGracias por usar Focus App.\n¡Hasta pronto!");
