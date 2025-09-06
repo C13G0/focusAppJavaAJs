@@ -43,105 +43,148 @@ if (opcionInicio === 2) {
 if (nombreUsuario === usuarioRegistrado && claveLogin === claveRegistrada) {
     console.log("¡Inicio de sesión exitoso! Bienvenido, " + nombreUsuario);
 
-    // Resumen
-    console.log("\nResumen");
-    console.log("Seleccione una opción:");
-    console.log("1. Introducción a la programación");
-    console.log("2. Metodologías ágiles de programación");
-    console.log("3. Lógica de programación");
-    console.log("4. Estadísticas");
-    console.log("5. Social Focus");
-    console.log("6. Configuración");
-    let opcionResumen = parseInt(prompt("--------Seleccione una opción:-------- \n1. Introducción a la programación\n2. Metodologías ágiles de programación.\n3. Lógica de programación.\n4. Estadísticas.\n5. Social Focus.\n6. Configuración."));
+    // Bucle principal del menú de resumen
+    let salirResumen = false;
+    do {
+        // Menú de resumen principal
+        let opcionResumen = parseInt(prompt(
+            "=================================\n                 RESUMEN              \n================================\n\n" +
+            "1. Introducción a la programación\n" +
+            "2. Metodologías ágiles de programación\n" +
+            "3. Lógica de programación\n" +
+            "4. Estadísticas\n" +
+            "5. Social Focus\n" +
+            "6. Configuración\n" +
+            "0. Salir"
+        ));
 
-    // Desglose de las opciones de Resumen
-    switch (opcionResumen) {
-        case 1:
+        switch (opcionResumen) {
+            case 1:
+                // Mostrar información de Introducción a la programación
 
-            alert("=================================\n                 Focus App              \n================================\n\n=================================\n                 RESUMEN              \n================================")
-            console.log("\nIntroducción a la programación");
-            console.log("Profesor: Jossy Reinaldo Tello Landazuri");
-            console.log("Progreso: 40%");
-            console.log("Próxima entrega: Taller de CSS (M2)");
-            break;
-        case 2:
-            console.log("\nMetodologías ágiles para la programación");
-            console.log("Profesor: Juan Jose Gallego Mesa");
-            console.log("Progreso: 72%");
-            console.log("Próxima entrega: Primeras 10 HU listas (M2)");
-            break;
-        case 3:
-            console.log("\nLógica de programación:");
-            console.log("Profesor: Jaime Alberto Zapata Valencia");
-            console.log("Progreso: 80%");
-            console.log("\nSeleccione una opción para ver próximas entregas:");
-            console.log("1. momento 1");
-            console.log("2. momento 2");
-            console.log("3. momento 3");
-            let opcionDeLogica = parseInt(prompt("Seleccione una opción:\n\n1. Primer momento\n2. segundo momento\n3. Tercer momento"));
+                
+                alert("=====INTRODUCCIÓN A LA PROGRAMACIÓN=====\n\nProfesor: Jossy Reinaldo Tello Landazuri\nProgreso: 40%\nPróxima entrega: Taller de CSS (M2)");
+                // Opción para volver o salir
+                let volverIntro = false;
+                do {
+                    let opcionIntro = parseInt(prompt("1. Volver al resumen\n9. Salir"));
+                    if (opcionIntro === 1) {
+                        volverIntro = true;
+                    } else if (opcionIntro === 0) {
+                        volverIntro = true;
+                        salirResumen = true;
+                    } else {
+                        alert("Opción no válida.");
+                    }
+                } while (!volverIntro && !salirResumen);
+                break;
+            case 2:
+                // Mostrar información de Metodologías ágiles
+                alert("=====METODOLOGÍAS ÁGILES=====\n\nProfesor: Juan Jose Gallego Mesa\nProgreso: 72%\nPróxima entrega: Primeras 10 HU listas (M2)");
+                let volverAgil = false;
+                do {
+                    let opcionAgil = parseInt(prompt("1. Volver al resumen\n9. Salir"));
+                    if (opcionAgil === 1) {
+                        volverAgil = true;
+                    } else if (opcionAgil === 0) {
+                        volverAgil = true;
+                        salirResumen = true;
+                    } else {
+                        alert("Opción no válida.");
+                    }
+                } while (!volverAgil && !salirResumen);
+                break;
+            case 3:
+                // Submenú de Lógica de programación
+                let volverLogica = false;
+                do {
+                    let opcionDeLogica = parseInt(prompt(
+                        "=====LÓGICA DE PROGRAMACION=====\n\nProfesor: Jaime Alberto Zapata Valencia\nProgreso: 80%\n" +
+                        "1. Momento 1\n2. Momento 2\n3. Momento 3\n0. Volver\n9. Salir"
+                    ));
+                    if (opcionDeLogica === 1) {
+                        alert("Ejercicios básicos de lógica, quiz de conocimiento y desempeño.");
+                    } else if (opcionDeLogica === 2) {
+                        alert("Quiz de conocimiento y sustentación de desempeño. Entrega evidencias de Condicionales y JAVA en el proyecto integrador");
+                    } else if (opcionDeLogica === 3) {
+                        alert("Tema: Aun no sabemos. Que Dios nos ampare :P");
+                    } else if (opcionDeLogica === 0) {
+                        volverLogica = true;
+                    } else if (opcionDeLogica === 9) {
+                        volverLogica = true;
+                        salirResumen = true;
+                    } else {
+                        alert("Opción no válida.");
+                    }
+                } while (!volverLogica && !salirResumen);
+                break;
+            case 4:
+                // Mostrar información de Estadísticas
+                alert("=====ESTADÍSTICAS=====\n\nIntro: 40%\nLogica: 72%\nAgilismos: 80%\nPromedio general: 64%");
+                let volverEstad = false;
+                do {
+                    let opcionEstad = parseInt(prompt("1. Volver al resumen\n9. Salir"));
+                    if (opcionEstad === 1) {
+                        volverEstad = true;
+                    } else if (opcionEstad === 9) {
+                        volverEstad = true;
+                        salirResumen = true;
+                    } else {
+                        alert("Opción no válida.");
+                    }
+                } while (!volverEstad && !salirResumen);
+                break;
+            case 5:
+                // Mostrar información de Social Focus
+                alert("=====¡BIENVENIDOS AL SOCIAL FOCUS=====\n\nChat general:\n1. DonAndres escribió: Que vamos a hacer para mañana que no hemos hecho el trabajo?? D:\n2. la-divina respondió: Mijo para eso está chatGPT. LOL!\n3. " + nombreUsuario + " reaccionó al mensaje de la-divina con un corazón");
+                let volverSocial = false;
+                do {
+                    let opcionSocial = parseInt(prompt("1. Volver al resumen\n9. Salir"));
+                    if (opcionSocial === 1) {
+                        volverSocial = true;
+                    } else if (opcionSocial === 9) {
+                        volverSocial = true;
+                        salirResumen = true;
+                    } else {
+                        alert("Opción no válida.");
+                    }
+                } while (!volverSocial && !salirResumen);
+                break;
+            case 6:
+                // Submenú de Configuración
+                let volverConfig = false;
+                do {
+                    let opcionConfiguracion = parseInt(prompt(
+                        "=====CONFIGURACIÓN=====\n\n1. Perfil\n2. Datos\n3. Otros\n0. Volver\n9. Salir"
+                    ));
+                    if (opcionConfiguracion === 1) {
+                        alert("Perfil:\nNombre de usuario: " + nombreUsuario + "\nEdad: " + edad + "\nCarrera: " + carrera + "\nNickname: " + nickname);
+                    } else if (opcionConfiguracion === 2) {
+                        alert("Datos:\nCorreo institucional: " + nombreUsuario + "@cesde.net\nTeléfono: +57 " + telefonoEstudiante);
+                    } else if (opcionConfiguracion === 3) {
+                        alert("Otros:\nNotificaciones: Activadas\nIdioma: Español\nCerrar sesión");
+                    } else if (opcionConfiguracion === 0) {
+                        volverConfig = true;
+                    } else if (opcionConfiguracion === 9) {
+                        volverConfig = true;
+                        salirResumen = true;
+                    } else {
+                        alert("Opción no válida.");
+                    }
+                } while (!volverConfig && !salirResumen);
+                break;
+            case 0:
+                // Opción para salir del menú resumen
+                salirResumen = true;
+                break;
+            default:
+                alert("Opción no válida.");
+        }
+    } while (!salirResumen);
 
-            // Desglose de las opciones dentro de Lógica
-            if (opcionDeLogica === 1) {
-                console.log("\nEjercicios básicos de lógica, quiz de conocimiento y desempeño.");
-            } else if (opcionDeLogica === 2) {
-                console.log("\nQuiz de conocimiento y sustentación de desempeño. Entrega evidencias de Condicionales y JAVA en el proyecto integrador");
-            } else if (opcionDeLogica === 3) {
-                console.log("\nTema: Aun no sabemos. Que Dios nos ampare :P");
-            } else {
-                console.log("Opción no válida.");
-            }
-            break;
-        case 4:
-            console.log("\nEstadísticas");
-            let porcentaje1 = 40;
-            let porcentaje2 = 72;
-            let porcentaje3 = 80;
-            console.log("\nIntro: " + porcentaje1 + "%");
-            console.log("Logica: " + porcentaje2 + "%");
-            console.log("Agilismo: " + porcentaje3 + "%");
-            let promedio = (porcentaje1 + porcentaje2 + porcentaje3) / 3;
-            console.log("Promedio general: " + promedio + "%");
-            break;
-        case 5:
-            console.log("\nSocial Focus :D");
-            console.log("\n¡Bienvenidos a Social Focus! Comparte tus logros y dudas, es un espacio para que compartas con tu comunidad del CESDE");
-            console.log("\nChat general:");
-            console.log("1. DonAndres escribió: Que vamos a hacer para mañana que no hemos hecho el trabajo?? D:");
-            console.log("2. la-divina respondió: Mijo para eso está chatGPT. LOL!");
-            console.log("3. " + nombreUsuario + " reaccionó al mensaje de la-divina con un corazón");
-            break;
-        case 6:
-            console.log("\nConfiguración:");
-            console.log("\nSeleccione una opción:");
-            console.log("\n1. Perfil");
-            console.log("2. Datos");
-            console.log("3. Otros");
-            let opcionConfiguracion = parseInt(prompt("Opción:\n\n1. Perfil\n2. Datos\n3. Otros"))
-
-            if (opcionConfiguracion === 1) {
-                console.log("\nPerfil:");
-                console.log("\nNombre de usuario: " + nombreUsuario);
-                console.log("Edad: " + edad);
-                console.log("Carrera: " + carrera);
-                console.log("Nickname: " + nickname);
-            } else if (opcionConfiguracion === 2) {
-                console.log("\nDatos:");
-                console.log("\nCorreo institucional: " + nombreUsuario + "@cesde.net");
-                console.log("Teléfono: +57 " + telefonoEstudiante);
-            } else if (opcionConfiguracion === 3) {
-                console.log("\nOtros:");
-                console.log("\nNotificaciones: Activadas");
-                console.log("Idioma: Español");
-                console.log("Cerrar sesión");
-            } else {
-                console.log("Opción no válida.");
-            }
-            break;
-        default:
-            console.log("Opción no válida.");
-    }
+    // Mensaje final al salir
+    alert("\nGracias por usar Focus App.\n¡Hasta pronto!");
 } else {
     console.log("\nUsuario o contraseña incorrectos. Por favor reinicia el proceso.");
 }
 
-console.log("\nGracias por usar Focus App.\n¡Hasta pronto!");
