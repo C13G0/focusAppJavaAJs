@@ -1,0 +1,1 @@
+Se crea esta carpeta para almacenar videos que se usaran en el proyecto

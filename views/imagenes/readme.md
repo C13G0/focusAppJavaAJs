@@ -1,0 +1,1 @@
+Se crea esta carpeta para almacenar imagenes que se usaran en el proyecto
